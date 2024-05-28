@@ -14,7 +14,9 @@ const AnalyticsDashboard = () => {
       <Card className="analyticsDashboard">
         <Card.Body>
           <Card.Title>
-            <h4>Personal Data</h4>
+            <h4 style={{ textTransform: "capitalize" }}>
+              Welcome to our dashboard
+            </h4>
           </Card.Title>
           <div className="analyticsTables">
             <h5>E1 Utilization Dashboard (Last Update: 2024-04-02 16:23:09)</h5>
