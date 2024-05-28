@@ -1,0 +1,22 @@
+.analyticsDashboard {
+  padding: 32px;
+  h4 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .analyticsTables {
+    border: 1px solid #8f8e9c;
+    h5 {
+      font-size: 14px;
+      background: #8f8e9c;
+      color: #fff;
+      padding: 10px 24px;
+    }
+    .singleTable {
+      padding: 24px;
+      h6 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
