@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import { Disc, X, Circle, Menu } from "react-feather";
 import classnames from "classnames";
-import Lgimage from "../../../../../src/assets/img/Asset 12Icon.svg";
+import React, { Component } from "react";
+import { Menu } from "react-feather";
+import { NavLink } from "react-router-dom";
 import Smimage from "../../../../../src/assets/img/Uapp_fav.png";
+import Lgimage from "../../../../../src/assets/img/logo.jpeg";
 class SidebarHeader extends Component {
   render() {
     let {
@@ -22,8 +22,8 @@ class SidebarHeader extends Component {
               <div className="brand-logo">
                 {/* <h2 className="brand-text mb-0">Z-DESK</h2> */}
 
-                <div className="hide-min-678">
-                  <img src={Lgimage} />
+                <div className="hide-min-678" style={{ width: "150px" }}>
+                  <img src={Lgimage} className="img-fluid" />
                 </div>
                 <div className="show-max-678">
                   <img src={Smimage} />

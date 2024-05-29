@@ -62,7 +62,8 @@ const UserManagenent2 = () => {
   };
 
   // Handle Modal Submit
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log("handleSubmit");
   };
 
