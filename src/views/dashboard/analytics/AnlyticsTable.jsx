@@ -9,38 +9,14 @@ import TableRow from "@mui/material/TableRow";
 import React, { useState } from "react";
 
 const columns = [
-  {
-    id: "icxName",
-    label: "Name of ICX",
-  },
-  {
-    id: "totalAssignmentE1",
-    label: "Total Assignment E1",
-  },
-  {
-    id: "signalingCircuits",
-    label: "Signaling Circuits",
-  },
-  {
-    id: "synchronizationCircuits",
-    label: "Synchronization Circuits",
-  },
-  {
-    id: "voiceCircuits",
-    label: "Voice Circuits",
-  },
-  {
-    id: "concurrentChannel",
-    label: "Concurrent Channel",
-  },
-  {
-    id: "freeChannel",
-    label: "Free Channel",
-  },
-  {
-    id: "usage",
-    label: "usage %",
-  },
+  { id: "icxName", label: "Name of ICX" },
+  { id: "totalAssignmentE1", label: "Total Assignment E1" },
+  { id: "signalingCircuits", label: "Signaling Circuits" },
+  { id: "synchronizationCircuits", label: "Synchronization Circuits" },
+  { id: "voiceCircuits", label: "Voice Circuits" },
+  { id: "concurrentChannel", label: "Concurrent Channel" },
+  { id: "freeChannel", label: "Free Channel" },
+  { id: "usage", label: "Usage %" },
 ];
 
 function createData(
@@ -86,7 +62,6 @@ rows.forEach((row) => {
   });
 });
 total.icxName = "Sub Total";
-
 total = Object.values(total);
 
 export default function AnalyticsTable() {
@@ -102,10 +77,19 @@ export default function AnalyticsTable() {
     setPage(0);
   };
 
+  const cellBorderStyle = {
+    border: "1px solid #DBDFE3",
+    borderCollapse: "collapse",
+  };
+
+  const tableStyle = {
+    borderCollapse: "collapse",
+  };
+
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
       <TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky table" sx={tableStyle}>
           <TableHead>
             <TableRow>
               {columns.map((column) => (
@@ -114,7 +98,9 @@ export default function AnalyticsTable() {
                   sx={{
                     backgroundColor: "#0095AD",
                     color: "white",
+                    fontSize: "14px",
                     fontWeight: "600",
+                    ...cellBorderStyle,
                   }}
                 >
                   {column.label}
@@ -135,14 +121,20 @@ export default function AnalyticsTable() {
                   >
                     {columns.map((column) => {
                       const value = row[column.id];
-                      return <TableCell key={column.id}>{value}</TableCell>;
+                      return (
+                        <TableCell key={column.id} sx={cellBorderStyle}>
+                          {value}
+                        </TableCell>
+                      );
                     })}
                   </TableRow>
                 );
               })}
             <TableRow>
-              {total.map((item) => (
-                <TableCell>{item}</TableCell>
+              {total.map((item, index) => (
+                <TableCell key={index} sx={cellBorderStyle}>
+                  {item}
+                </TableCell>
               ))}
             </TableRow>
           </TableBody>
@@ -154,7 +146,7 @@ export default function AnalyticsTable() {
             {
               color: "#0095AD",
               marginTop: "13px",
-            },  
+            },
         }}
         rowsPerPageOptions={[10, 25, 100]}
         component="div"

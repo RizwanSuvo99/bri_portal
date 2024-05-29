@@ -14,7 +14,10 @@ const AnalyticsDashboard = () => {
       <Card className="analyticsDashboard">
         <Card.Body>
           <Card.Title>
-            <h4 style={{ textTransform: "capitalize" }}>
+            <h4
+              style={{ textTransform: "capitalize" }}
+              className="border-bottom"
+            >
               Welcome to our dashboard
             </h4>
           </Card.Title>

@@ -135,7 +135,7 @@ const UserManagenent2 = () => {
                 <Form>
                   <h6>Find User : </h6>
                   <div className="d-flex align-items-center">
-                    <Form.Control type="text" placeholder="Search text" />
+                    <Form.Control type="text" placeholder="Search..." />
                     <Button
                       variant="primary"
                       style={{ padding: "7px 30px", marginLeft: "10px" }}

@@ -459,9 +459,7 @@
   tbody {
     font-size: 14px;
     font-weight: 500;
-    tr td {
-      padding: 2px 16px;
-    }
+    
   }
 }
 
